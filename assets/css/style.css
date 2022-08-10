@@ -17,3 +17,15 @@
 .covid-cases-container {
   background-color: var(--header);
 }
+
+.contents {
+  margin-top: auto;
+}
+
+.visibilty {
+  visibility: hidden;
+}
+
+.hide {
+  display: none;
+}
