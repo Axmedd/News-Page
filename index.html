@@ -4,8 +4,47 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <title>Document</title>
   </head>
-  <body></body>
+
+  <div class="nav-bar">
+    <a class="active nav-items" href="#home">Home</a>
+    <a class="nav-items" href="#sports">Sports</a>
+    <a class="nav-items" href="#Latest">Latest</a>
+  </div>
+
+  <body>
+    <div class="tile is-ancestor">
+      <!-- All the tiles/Content of page is in this Div -->
+      <div class="tile is-4 is-vertical is-parent">
+        <!-- This is a Bulma preset CSS Class -->
+        <div class="tile is-child box">
+          <p class="title covid-cases">Covid Cases</p>
+          <p>Cases Counter</p>
+        </div>
+        <div class="tile is-child box">
+          <p class="title sports">Sports</p>
+          <p>latest sports news</p>
+        </div>
+      </div>
+      <div class="tile is-parent">
+        <div class="tile is-child box">
+          <p class="title latest">Latest</p>
+          <p>latest general news</p>
+        </div>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <div class="footer">
+      <a class="active nav-items" href="#home">Home</a>
+      <a class="nav-items" href="#sports">Sports</a>
+      <a class="covid-cases" href="#covid-cases">Latest</a>
+    </div>
+  </footer>
 </html>
