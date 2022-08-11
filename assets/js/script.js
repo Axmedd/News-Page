@@ -60,3 +60,6 @@ fetch(firstApiUrl)
 fetch(secondApiUrl)
   .then((response) => response.json())
   .then((secondApiData) => console.log(secondApiData));
+
+//iterate array data.length
+//data[i].author
