@@ -43,27 +43,13 @@ function openCovidPage() {
   sportsSection.remove();
 }
 
-function getApi() {
-  var requestUrl =
-    "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
+// fetchButton.addEventListener("click", getApi);
 
-  function handleData(res) {
-    return res.json();
-  }
+requestURL =
+  "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
 
-  function printData(data) {
-    console.log(data);
+fetch(requestURL)
+  .then((response) => response.json())
+  .then((data) => console.log(data));
 
-    // for (let i = 0; i < data.length; i++) {
-    //   console.log(data[i].owner.avatar_url);
-
-    // }
-  }
-
-  let data = fetch(requestUrl, { method: "GET" })
-    .then((res) => handleData(res))
-    .then((data) => printData(data));
-  console.log(data);
-}
-
-fetchButton.addEventListener("click", getApi);
+console.log(data[i].description);
