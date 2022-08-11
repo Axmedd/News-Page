@@ -45,11 +45,18 @@ function openCovidPage() {
 
 // fetchButton.addEventListener("click", getApi);
 
-requestURL =
+firstApiUrl =
   "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
 
-fetch(requestURL)
-  .then((response) => response.json())
-  .then((data) => console.log(data));
+secondApiUrl =
+  "https://api.covid19api.com/total/country/united-kingdom/status/confirmed?from=2022-03-01T00:00:00Z&to=2022-08-01T00:00:00Z";
 
-console.log(data[i].description);
+fetch(firstApiUrl)
+  .then((response) => response.json())
+  .then((firstApiData) => console.log(firstApiData));
+
+//console.log(data[i].description);
+
+fetch(secondApiUrl)
+  .then((response) => response.json())
+  .then((secondApiData) => console.log(secondApiData));
