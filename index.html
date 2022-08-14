@@ -9,21 +9,82 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <title>Document</title>
+    <title>News Page</title>
   </head>
   <body>
-    <header class="header">
-      <nav class="nav-bar">
-        <h1>UK NEWS PAGE</h1>
-        <div class="list">
-          <ul class="nav-list">
-            <li class="nav-items"><a href="#home">HOME</a></li>
-            <li class="nav-items"><a href="#favourite">FAVOURITES</a></li>
-            <li class="nav-items"><a href="#aboutUs">ABOUT US</a></li>
-          </ul>
+    <nav class="navbar is-transparent">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img
+            src="https://bulma.io/images/bulma-logo.png"
+            alt="Bulma: a modern CSS framework based on Flexbox"
+            width="112"
+            height="28"
+          />
+        </a>
+        <div
+          class="navbar-burger"
+          data-target="navbarExampleTransparentExample"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-      </nav>
-    </header>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="https://bulma.io/"> Home </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a
+              class="navbar-link"
+              href="https://bulma.io/documentation/overview/start/"
+            >
+              Categories
+            </a>
+            <div class="navbar-dropdown is-boxed">
+              <a
+                class="navbar-item"
+                href="https://bulma.io/documentation/overview/start/"
+              >
+                Latest
+              </a>
+              <a
+                class="navbar-item"
+                href="https://bulma.io/documentation/overview/modifiers/"
+              >
+                Sports
+              </a>
+              <a
+                class="navbar-item"
+                href="https://bulma.io/documentation/columns/basics/"
+              >
+                Covid Cases
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <a
+                class="navbar-item"
+                href="https://bulma.io/documentation/columns/basics/"
+              >
+                About Us
+              </a>
+              <a
+                class="navbar-item"
+                href="https://bulma.io/documentation/columns/basics/"
+              >
+                Favorites
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
     <main>
       <div class="categories">
         <div class="buttons">
