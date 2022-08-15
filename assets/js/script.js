@@ -78,3 +78,20 @@ function handleCovidCases(secondApiData) {
   //append text content
   console.log(secondApiData.data[i].cases);
 }
+function printApi(apiData) {
+  console.log(apiData);
+}
+function handleCovidCases(secondApiData) {
+  console.log(secondApiData);
+  console.log(secondApiData.Countries);
+  let countries = secondApiData.Countries;
+  for (let i of countries) {
+    console.log(i.Country);
+    if (i.Country === "United Kingdom") {
+      console.log(i);
+    }
+  }
+  //create a html tag
+  //append text content
+  console.log(secondApiData.data[i].cases);
+}
