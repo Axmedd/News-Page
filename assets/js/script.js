@@ -1,6 +1,7 @@
 const latestButton = document.getElementById("latest-btn");
 const sportsButton = document.getElementById("sports-btn");
 const covidButton = document.getElementById("covid-cases-btn");
+const localStorageButton = document.getElementById("localStorage-btn");
 const pageContent = document.getElementById("page-content");
 const sportsSection = document.getElementById("sports-section");
 const latestSection = document.getElementById("latest-section");
