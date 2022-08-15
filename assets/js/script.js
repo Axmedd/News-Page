@@ -19,6 +19,7 @@ function openLatestPage() {
   sportsButton.remove();
   covidButton.remove();
   sportsSection.remove();
+  covidSection.remove();
 }
 
 sportsButton.addEventListener("click", openSportPage);
@@ -31,6 +32,7 @@ function openSportPage() {
   sportsButton.remove();
   covidButton.remove();
   latestSection.remove();
+  covidSection.remove();
 }
 
 covidButton.addEventListener("click", openCovidPage);
