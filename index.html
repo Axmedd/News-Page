@@ -9,64 +9,140 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <title>Document</title>
+    <title>News Page</title>
   </head>
 
+
+  
+
+  <body>
   <div class="nav-bar" id="nav-bar-items">
     <a class="active nav-items" href="#home">Home</a>
     <a class="nav-items" href="#sports">Sports</a>
     <a class="nav-items" href="#Latest">Latest</a>
   </div>
-
-  <body>
-    <div class="categories">
-      <div class="buttons">
-        <button id="latest-btn" class="button is-large">Latest</button>
-        <button id="sports-btn" class="button is-large">Sports</button>
-        <button id="covid-cases-btn" class="covid-cases-btn button is-large">
-          Covid Cases
-        </button>
-      </div>
-    </div>
-    <nav id="page-content" class="hide">
-      <div class="tile is-ancestor">
-        <!-- All the tiles/Content of page is in this Div -->
-        <div class="tile is-4 is-vertical is-parent">
-          <!-- This is a Bulma preset CSS Class -->
-          <section id="covid-section" >
-          <div class="tile is-child box">
-            <p class="title covid-cases">Covid Cases</p>
-            <p>Cases Counter</p>
-          </div>
-           </div>
-          </section>
+    <nav class="navbar is-transparent" >
+      <div class="navbar-brand">
+        <a class="navbar-item" href="https://bulma.io">
+          <img src="./assets/images/logo.png" alt="news page logo" 
+          width="100"/>
           
-        <nav id="latest-section">
-          <div class="tile is-parent">
-            <div class="tile is-child box">
-              <p class="title latest">Latest</p>
-              <p>latest general news</p>
+        </a>
+        <div
+          class="navbar-burger"
+          data-target="navbarExampleTransparentExample"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navbarExampleTransparentExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item" href="/index.html"> Home </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link"> Categories </a>
+            <div class="navbar-dropdown is-boxed">
+              <a class="navbar-item " href="#"> Latest </a>
+              <a class="navbar-item" href="#"> Sports </a>
+              <a class="navbar-item" href="#"> Covid Cases </a>
             </div>
           </div>
-        </nav>
-        <nav id="sports-section" class="hide-sports">
-          <div class="tile is-parent">
-            <div class="tile is-child box">
-              <p class="title latest">Sports</p>
-              <p>general sports news</p>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <a class="navbar-item " href="#"> About Us </a>
+              <a class="navbar-item " href="#"> Favorites </a>
             </div>
           </div>
-        </nav>
+        </div>
       </div>
     </nav>
+    
+      <section class="section" id="latest">
+        <div class="columns pt-6 is-mobile">
+          <div class="column is-two-thirds mt-6">
+            <span class="icon has-text-warning">
+              <i class="far fa-chart-bar fa-lg"></i>
+            </span>
+            <h1 class="is-size-1">
+              Latest news <br />
+              in the UK
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              rem consequatur iste doloribus, dolorum nihil reiciendis quis.
+              Atque eaque incidunt quia, iste nisi quisquam voluptates dicta vel
+              consequuntur dolorum dolorem.
+            </p>
+            <button class="button is-link mt-4">Click here</button>
+          </div>
+          <div class="column mt-6">
+            <img src="./assets/images/placeholder.png" alt="commonwealth" 
+            width="300"
+            height="300"/>
+          </div>
+        </div>
+      </section>
+      <section class="section">
+        <div class="columns pt-6 is-mobile">
+          <div class="column mt-6">
+            <img src="./assets/images/placeholder.png" alt="commonwealth" 
+            width="300"
+            height="300"/>
+          </div>
+          <div class="column is-two-thirds mt-6">
+            <span class="icon has-text-warning">
+              <i class="far fa-chart-bar fa-lg"></i>
+            </span>
+            <h1 class="is-size-1">
+              Sports <br />
+              in the UK
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              rem consequatur iste doloribus, dolorum nihil reiciendis quis.
+              Atque eaque incidunt quia, iste nisi quisquam voluptates dicta vel
+              consequuntur dolorum dolorem.
+            </p>
+            <button class="button is-link mt-4">Click here</button>
+          </div>
+          
+        </div>
+      </section>
+      
+      <section class="section">
+        <div class="columns pt-6 is-mobile">
+          <div class="column is-two-thirds mt-6">
+            <span class="icon has-text-warning">
+              <i class="far fa-chart-bar fa-lg"></i>
+            </span>
+            <h1 class="is-size-1">
+              Covid Cases <br />
+              in the UK
+            </h1>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+              rem consequatur iste doloribus, dolorum nihil reiciendis quis.
+              Atque eaque incidunt quia, iste nisi quisquam voluptates dicta vel
+              consequuntur dolorum dolorem.
+            </p>
+            <button class="button is-link mt-4">Click here</button>
+          </div>
+          <div class="column mt-6">
+            <img src="./assets/images/placeholder.png" alt="commonwealth" 
+            width="300"
+            height="300"/>
+          </div>
+        </div>
+        
+      </section>
+    </main>
+
     <script src="./assets/js/script.js"></script>
     
   </body>
-  <footer>
-    <div class="footer">
-      <a class="active nav-items" href="#home">Home</a>
-      <a class="nav-items" href="#sports">Sports</a>
-      <a class="covid-cases" href="#covid-cases">Latest</a>
-    </div>
-  </footer>
 </html>
