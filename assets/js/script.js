@@ -5,7 +5,7 @@ const pageContent = document.getElementById("page-content");
 const sportsSection = document.getElementById("sports-section");
 const latestSection = document.getElementById("latest-section");
 const covidSection = document.getElementById("covid-section");
-
+const ukCases = $("#uk-cases");
 latestButton.addEventListener("click", openLatestPage);
 
 function openLatestPage() {
@@ -45,20 +45,56 @@ function openCovidPage() {
   sportsSection.remove();
 }
 
-// fetchButton.addEventListener("click", getApi);
+fetchButton.addEventListener("click", getApi);
 
 firstApiUrl =
   "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
 
-secondApiUrl =
-  "https://api.covid19api.com/total/country/united-kingdom/status/confirmed?from=2022-03-01T00:00:00Z&to=2022-08-01T00:00:00Z";
+secondApiUrl = "https://api.covid19api.com/summary";
 
-fetch(firstApiUrl)
+/*fetch(firstApiUrl)
   .then((response) => response.json())
-  .then((firstApiData) => console.log(firstApiData));
+  .then((firstApiData) => printApi(firstApiData));
+  */
 
 //console.log(data[i].description);
 
 fetch(secondApiUrl)
   .then((response) => response.json())
-  .then((secondApiData) => console.log(secondApiData));
+  .then((secondApiData) => handleCovidCases(secondApiData));
+
+function printApi(apiData) {
+  console.log(apiData);
+}
+function handleCovidCases(secondApiData) {
+  console.log(secondApiData);
+  console.log(secondApiData.Countries);
+  let countries = secondApiData.Countries;
+  for (let i of countries) {
+    console.log(i.Country);
+    if (i.Country === "United Kingdom") {
+      console.log(i);
+    }
+  }
+  //create a html tag
+  //append text content
+  console.log(secondApiData.data[i].cases);
+}
+function printApi(apiData) {
+  console.log(apiData);
+}
+function handleCovidCases(secondApiData) {
+  console.log(secondApiData);
+  console.log(secondApiData.Countries);
+  let countries = secondApiData.Countries;
+  for (let i of countries) {
+    console.log(i.Country);
+    if (i.Country === "United Kingdom") {
+      console.log(i);
+    }
+  }
+
+  //create a html tag
+  //append text content
+  console.log(secondApiData.data[i].cases);
+}
