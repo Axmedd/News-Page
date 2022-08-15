@@ -29,3 +29,30 @@
 .hide {
   display: none;
 }
+
+.link-button {
+  font: bold 11px Arial;
+  text-decoration: none;
+  background-color: var(--header);
+  color: white;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #cccccc;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #cccccc;
+}
+
+.link-button {
+  margin-top: 5cm;
+  margin-bottom: 5cm;
+}
+
+/* .news-container {
+  width: 805cm;
+  size: 1251cm;
+  overflow: auto;
+} */
+
+#latestheadlines {
+  color: var(--header);
+}
