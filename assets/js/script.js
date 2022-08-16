@@ -55,7 +55,7 @@ fetch(firstApiUrl)
   .then((response) => response.json())
   .then((firstApiData) => console.log(firstApiData));
 
-//console.log(data[i].description);
+console.log(data[i].description);
 
 fetch(secondApiUrl)
   .then((response) => response.json())
