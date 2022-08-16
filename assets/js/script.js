@@ -45,20 +45,71 @@ function openCovidPage() {
   latestSection.remove();
   sportsSection.remove();
 }
+// fetchButton.addEventListener("click", getApi);
+function handleNewsApi() {
+  let firstApiUrl =
+    "http://api.mediastack.com/v1/news?access_key=28c721d782d6d69f95ee0cc65221b176&date=2022-08-08&countries=gb";
 
-fetchButton.addEventListener("click", getApi);
+  fetch(firstApiUrl)
+    .then((response) => response.json())
+    .then((firstApiData) => handleNewsApiData(firstApiData));
 
-firstApiUrl =
-  "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
+  function handleNewsApiData(firstApiData) {
+    //console.log(firstApiData.data);
+    // headlineList = document.createElement("ul");
+    for (var i = 0; i < 25; i++) {
+      //create a html tag
+      //append text content
+      console.log(firstApiData.title);
 
-secondApiUrl = "https://api.covid19api.com/summary";
+      if (firstApiData.data[i].category === "sports") {
+        handleSportsData(firstApiData.data[i]);
+      } else {
+        handleNewsData(firstApiData.data[i]);
+      }
+    }
+  }
+}
 
-/*fetch(firstApiUrl)
-  .then((response) => response.json())
-  .then((firstApiData) => printApi(firstApiData));
-  */
+function handleNewsData(newsData) {
+  console.log(newsData);
+  // h2ForLatest = document.createElement("h2");
+  // latestHeadlines.classList.add("is-four-fifths");
+  // h2ForLatest.textContent = newsData.title;
+  // latestHeadlines.appendChild(h2ForLatest);
+  listHead = document.createElement("li");
+  linkForLatest = document.createElement("a");
+  linkForLatest.classList.add("link-button");
+  // linkForLatest = document.createElement("");
+  linkForLatest.setAttribute("href", newsData.url);
+  console.log(newsData);
+  linkForLatest.textContent = newsData.title;
+  //latestHeadlines.appendChild(linkForLatest);
+  listHead.appendChild(linkForLatest);
+  headlineList.appendChild(listHead);
+}
+
+function handleSportsData(sportsData) {
+  console.log(sportsData);
+  // h2ForLatest = document.createElement("h2");
+  // latestHeadlines.classList.add("is-four-fifths");
+  // h2ForLatest.textContent = sportsData.title;
+  // latestHeadlines.appendChild(h2ForLatest);
+  sportsListHead = document.createElement("li");
+  linkForSport = document.createElement("a");
+  linkForSport.classList.add("link-button");
+  // linkForLatest = document.createElement("");
+  linkForSport.setAttribute("href", sportsData.url);
+  console.log(sportsData);
+  linkForSport.textContent = sportsData.title;
+  //latestHeadlines.appendChild(linkForLatest);
+  sportsListHead.appendChild(linkForSport);
+  SportsHeadlineList.appendChild(sportsListHead);
+}
 
 //console.log(data[i].description);
+
+secondApiUrl = "https://api.covid19api.com/summary";
 
 fetch(secondApiUrl)
   .then((response) => response.json())
