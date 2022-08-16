@@ -4,3 +4,9 @@
   background-position: center;
   background-size: cover;
 }
+#covid-cases {
+  background: url("/assets/images/background.jpg");
+  height: 725px;
+  background-position: center;
+  background-size: cover;
+}
