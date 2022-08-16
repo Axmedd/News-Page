@@ -7,7 +7,8 @@ const sportsSection = document.getElementById("sports-section");
 const latestSection = document.getElementById("latest-section");
 const covidSection = document.getElementById("covid-section");
 const ukCases = $("#uk-cases");
-latestButton.addEventListener("click", openLatestPage);
+
+latestButton.addEventListener("click", handleNewsData);
 
 function openLatestPage() {
   console.log("Latest Page Opened");
