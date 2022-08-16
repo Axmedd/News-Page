@@ -89,6 +89,26 @@ function handleNewsData(newsData) {
   headlineList.appendChild(listHead);
 }
 
+
+firstApiUrl =
+  "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
+
+secondApiUrl =
+  "https://api.covid19api.com/total/country/united-kingdom/status/confirmed?from=2022-03-01T00:00:00Z&to=2022-08-01T00:00:00Z";
+
+fetch(firstApiUrl)
+  .then((response) => response.json())
+  .then((firstApiData) => console.log(firstApiData));
+
+console.log(data[i].description);
+
+fetch(secondApiUrl)
+  .then((response) => response.json())
+  .then((secondApiData) => console.log(secondApiData));
+
+//iterate array data.length
+//data[i].author
+=======
 function handleSportsData(sportsData) {
   console.log(sportsData);
   // h2ForLatest = document.createElement("h2");
