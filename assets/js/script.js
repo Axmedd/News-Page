@@ -5,9 +5,12 @@ const pageContent = document.getElementById("page-content");
 const sportsSection = document.getElementById("sports-section");
 const latestSection = document.getElementById("latest-section");
 const covidSection = document.getElementById("covid-section");
-const latestHeadlines = document.getElementById("latestheadlines");
+const latestHeadlines = document.getElementById("latestHeadlines");
 const latestLinks = document.getElementById("links");
 const headlineList = document.getElementById("headlineList");
+const sportsHeadlines = document.getElementById("sportsHeadlines");
+const sportsLinks = document.getElementById("sportsLinks");
+const SportsHeadlineList = document.getElementById("sportsHeadlineList");
 
 latestButton.addEventListener("click", openLatestPage);
 
@@ -90,7 +93,24 @@ function handleNewsData(newsData) {
   headlineList.appendChild(listHead);
 }
 
-function handleSportsData(sportsData) {}
+function handleSportsData(sportsData) {
+  console.log(sportsData);
+  // h2ForLatest = document.createElement("h2");
+  // latestHeadlines.classList.add("is-four-fifths");
+  // h2ForLatest.textContent = sportsData.title;
+  // latestHeadlines.appendChild(h2ForLatest);
+  sportsListHead = document.createElement("li");
+  linkForSport = document.createElement("a");
+  linkForSport.classList.add("link-button");
+  // linkForLatest = document.createElement("");
+  linkForSport.setAttribute("href", sportsData.url);
+  console.log(sportsData);
+  linkForSport.textContent = sportsData.title;
+  //latestHeadlines.appendChild(linkForLatest);
+  sportsListHead.appendChild(linkForSport);
+  SportsHeadlineList.appendChild(sportsListHead);
+}
+
 //console.log(data[i].description);
 
 secondApiUrl =

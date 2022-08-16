@@ -16,6 +16,7 @@
     <a class="active nav-items" href="#home">Home</a>
     <a class="nav-items" href="#sports">Sports</a>
     <a class="nav-items" href="#Latest">Latest</a>
+    <a class="nav-items" href="#Viewed">Recently Viewed</a>
   </div>
 
   <body>
@@ -26,6 +27,7 @@
         <button id="covid-cases-btn" class="covid-cases-btn button is-large">
           Covid Cases
         </button>
+        <button id="viewed-btn" class="button is-large">Recently Viewed</button>
       </div>
     </div>
     <nav id="page-content" class="hide">
@@ -49,7 +51,7 @@
                 <ul id="headlineList">
 
                 </ul>
-              <div  class="is-four-fifths" id="latestheadlines" ></div>
+              <div  class="is-four-fifths" id="latestHeadlines" ></div>
               <div class="is-one-quarter"  id="links" ></div> 
             </div>
             </div>
@@ -59,8 +61,11 @@
           <div class="tile is-parent">
             <div class="tile is-child box">
               <p class="title latest">Sports</p>
-              <p>general sports news</p>
-            </div>
+              <ul id="sportsHeadlineList">
+
+              </ul>
+
+              </div>
           </div>
         </nav>
       </div>
