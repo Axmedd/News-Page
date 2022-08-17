@@ -1,14 +1,28 @@
 const latestButton = document.getElementById("latest-btn");
 const sportsButton = document.getElementById("sports-btn");
 const covidButton = document.getElementById("covid-cases-btn");
-const localStorageButton = document.getElementById("localStorage-btn");
 const pageContent = document.getElementById("page-content");
 const sportsSection = document.getElementById("sports-section");
 const latestSection = document.getElementById("latest-section");
 const covidSection = document.getElementById("covid-section");
-const ukCases = $("#uk-cases");
+const latestHeadlines = document.getElementById("latestHeadlines");
+const latestLinks = document.getElementById("links");
+const headlineList = document.getElementById("headlineList");
+const sportsHeadlines = document.getElementById("sportsHeadlines");
+const sportsLinks = document.getElementById("sportsLinks");
+const SportsHeadlineList = document.getElementById("sportsHeadlineList");
 
-latestButton.addEventListener("click", handleNewsData);
+const localStorageURL = document.getElementById("recently-viewed");
+
+// var url=location.href;
+// localStorage.setItem("url",url);
+// function loadOldUrl(){
+// location.href=localStorage.getItem("url");
+// }
+// //when button clicked
+// document.querySelector("recently-viewed").addEventListener("click",loadUrl);
+
+latestButton.addEventListener("click", openLatestPage);
 
 function openLatestPage() {
   console.log("Latest Page Opened");
@@ -18,7 +32,6 @@ function openLatestPage() {
   sportsButton.remove();
   covidButton.remove();
   sportsSection.remove();
-  covidSection.remove();
 }
 
 sportsButton.addEventListener("click", openSportPage);
@@ -31,7 +44,6 @@ function openSportPage() {
   sportsButton.remove();
   covidButton.remove();
   latestSection.remove();
-  covidSection.remove();
 }
 
 covidButton.addEventListener("click", openCovidPage);
@@ -46,6 +58,7 @@ function openCovidPage() {
   latestSection.remove();
   sportsSection.remove();
 }
+
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
   let firstApiUrl =
@@ -73,6 +86,7 @@ function handleNewsApi() {
 }
 
 function handleNewsData(newsData) {
+  //function for latest
   console.log(newsData);
   // h2ForLatest = document.createElement("h2");
   // latestHeadlines.classList.add("is-four-fifths");
@@ -90,27 +104,8 @@ function handleNewsData(newsData) {
   headlineList.appendChild(listHead);
 }
 
-
-firstApiUrl =
-  "http://api.mediastack.com/v1/news?access_key=774d6825387c91706870d36a208f2f53&date=2022-08-08&countries=gb";
-
-secondApiUrl =
-  "https://api.covid19api.com/total/country/united-kingdom/status/confirmed?from=2022-03-01T00:00:00Z&to=2022-08-01T00:00:00Z";
-
-fetch(firstApiUrl)
-  .then((response) => response.json())
-  .then((firstApiData) => console.log(firstApiData));
-
-console.log(data[i].description);
-
-fetch(secondApiUrl)
-  .then((response) => response.json())
-  .then((secondApiData) => console.log(secondApiData));
-
-//iterate array data.length
-//data[i].author
-=======
 function handleSportsData(sportsData) {
+  // function for sports
   console.log(sportsData);
   // h2ForLatest = document.createElement("h2");
   // latestHeadlines.classList.add("is-four-fifths");
@@ -130,44 +125,10 @@ function handleSportsData(sportsData) {
 
 //console.log(data[i].description);
 
-secondApiUrl = "https://api.covid19api.com/summary";
-
+secondApiUrl =
+  "https://api.covid19api.com/total/country/united-kingdom/status/confirmed?from=2022-03-01T00:00:00Z&to=2022-08-01T00:00:00Z";
 fetch(secondApiUrl)
   .then((response) => response.json())
-  .then((secondApiData) => handleCovidCases(secondApiData));
+  .then((secondApiData) => console.log(secondApiData));
 
-function printApi(apiData) {
-  console.log(apiData);
-}
-function handleCovidCases(secondApiData) {
-  console.log(secondApiData);
-  console.log(secondApiData.Countries);
-  let countries = secondApiData.Countries;
-  for (let i of countries) {
-    console.log(i.Country);
-    if (i.Country === "United Kingdom") {
-      console.log(i);
-    }
-  }
-  //create a html tag
-  //append text content
-  console.log(secondApiData.data[i].cases);
-}
-function printApi(apiData) {
-  console.log(apiData);
-}
-function handleCovidCases(secondApiData) {
-  console.log(secondApiData);
-  console.log(secondApiData.Countries);
-  let countries = secondApiData.Countries;
-  for (let i of countries) {
-    console.log(i.Country);
-    if (i.Country === "United Kingdom") {
-      console.log(i);
-    }
-  }
-
-  //create a html tag
-  //append text content
-  console.log(secondApiData.data[i].cases);
-}
+handleNewsApi();
