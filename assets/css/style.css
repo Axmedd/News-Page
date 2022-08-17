@@ -10,9 +10,19 @@
   background-position: center;
   background-size: cover;
 }
+
 #sports {
   background: url("/assets/images/blue-paint.png");
   height: 725px;
   background-position: center;
   background-size: cover;
+
+
+.visibilty {
+  visibility: hidden;
+}
+
+.hide {
+  display: none;
+
 }
