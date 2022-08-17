@@ -10,25 +10,6 @@
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
     <title>Document</title>
-
-    <script type="text/javascript"> 
-      function save() {
-          var myURL = document.getElementById('url');
-          localStorage.setItem('url', myURL.value);
-      }
-      
-      function load() {
-          var storedValue = localStorage.getItem('url');
-          var linkTag = document.getElementById('link');
-          var urlInput = document.getElementById('url');
-          if(storedValue) {
-              urlInput.value = storedValue;
-              linkTag.href = storedValue;
-              linkTag.innerHTML = storedValue;
-          }
-      }
-      
-      </script>
   </head>
 
   <nav class="navbar is-transparent">
@@ -61,16 +42,15 @@
         <div class="navbar-item">
           <div class="field is-grouped">
             <a class="navbar-item" href="#"> About Us </a>
-            <a class="navbar-item" href="#"> Favorites </a>
+            <button><a id="recently-viewed" class="navbar-item" href="#"> Recently Viewed </a></button>
           </div>
         </div>
       </div>
     </div>
   </nav>
 
-  <body >
-    
-    <button onClick="window.location.reload();">Back
+  <body>
+    <button onclick="window.location.reload();">Back
     </button>
     <div class="categories">
       <div class="buttons">
@@ -99,11 +79,6 @@
             <div class="tile is-child box">
               <p class="title latest">Latest</p>
               <div  class="news-container columns" >
-                <!-- <img
-          src="/assets/images/globe.png"
-          alt="news page logo"
-          width="100"
-        /> -->
                 <ul id="headlineList">
 
                 </ul>

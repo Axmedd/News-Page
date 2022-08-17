@@ -12,6 +12,16 @@ const sportsHeadlines = document.getElementById("sportsHeadlines");
 const sportsLinks = document.getElementById("sportsLinks");
 const SportsHeadlineList = document.getElementById("sportsHeadlineList");
 
+const localStorageURL = document.getElementById("recently-viewed");
+
+// var url=location.href;
+// localStorage.setItem("url",url);
+// function loadOldUrl(){
+// location.href=localStorage.getItem("url");
+// }
+// //when button clicked
+// document.querySelector("recently-viewed").addEventListener("click",loadUrl);
+
 latestButton.addEventListener("click", openLatestPage);
 
 function openLatestPage() {
@@ -84,7 +94,6 @@ function handleNewsData(newsData) {
   // latestHeadlines.appendChild(h2ForLatest);
   listHead = document.createElement("li");
   linkForLatest = document.createElement("a");
-  linkForLatest.setAttribute("id", "latestid");
   linkForLatest.classList.add("link-button");
   // linkForLatest = document.createElement("");
   linkForLatest.setAttribute("href", newsData.url);
@@ -114,15 +123,6 @@ function handleSportsData(sportsData) {
   SportsHeadlineList.appendChild(sportsListHead);
 }
 
-var Anchors = document.getElementById("latestid");
-
-for (var i = 0; i < Anchors.length; i++) {
-  Anchors[i].addEventListener("click", function (event) {
-    localStorage.setItem("Anchors", event.target.value);
-
-    console.log("Test");
-  });
-}
 //console.log(data[i].description);
 
 secondApiUrl =
@@ -132,9 +132,3 @@ fetch(secondApiUrl)
   .then((secondApiData) => console.log(secondApiData));
 
 handleNewsApi();
-
-var url = location.href;
-localStorage.setItem("url", url);
-function loadOldUrl() {
-  location.href = localStorage.getItem("url");
-}
