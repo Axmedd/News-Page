@@ -12,57 +12,57 @@ const sportsHeadlines = document.getElementById("sportsHeadlines");
 const sportsLinks = document.getElementById("sportsLinks");
 const SportsHeadlineList = document.getElementById("sportsHeadlineList");
 
-const localStorageURL = document.getElementById("recently-viewed");
+// const localStorageURL = document.getElementById("recently-viewed");
 
-// var url=location.href;
-// localStorage.setItem("url",url);
-// function loadOldUrl(){
-// location.href=localStorage.getItem("url");
+// // var url=location.href;
+// // localStorage.setItem("url",url);
+// // function loadOldUrl(){
+// // location.href=localStorage.getItem("url");
+// // }
+// // //when button clicked
+// // document.querySelector("recently-viewed").addEventListener("click",loadUrl);
+
+// latestButton.addEventListener("click", openLatestPage);
+
+// function openLatestPage() {
+//   console.log("Latest Page Opened");
+//   latestButton.classList.add.hidden;
+//   pageContent.classList.remove("hide");
+//   latestButton.remove();
+//   sportsButton.remove();
+//   covidButton.remove();
+//   sportsSection.remove();
 // }
-// //when button clicked
-// document.querySelector("recently-viewed").addEventListener("click",loadUrl);
 
-latestButton.addEventListener("click", openLatestPage);
+// sportsButton.addEventListener("click", openSportPage);
 
-function openLatestPage() {
-  console.log("Latest Page Opened");
-  latestButton.classList.add.hidden;
-  pageContent.classList.remove("hide");
-  latestButton.remove();
-  sportsButton.remove();
-  covidButton.remove();
-  sportsSection.remove();
-}
+// function openSportPage() {
+//   console.log("Sport Page Opened");
+//   latestButton.classList.add.hidden;
+//   pageContent.classList.remove("hide");
+//   latestButton.remove();
+//   sportsButton.remove();
+//   covidButton.remove();
+//   latestSection.remove();
+// }
 
-sportsButton.addEventListener("click", openSportPage);
+// covidButton.addEventListener("click", openCovidPage);
 
-function openSportPage() {
-  console.log("Sport Page Opened");
-  latestButton.classList.add.hidden;
-  pageContent.classList.remove("hide");
-  latestButton.remove();
-  sportsButton.remove();
-  covidButton.remove();
-  latestSection.remove();
-}
-
-covidButton.addEventListener("click", openCovidPage);
-
-function openCovidPage() {
-  console.log("Covid Page Opened");
-  latestButton.classList.add.hidden;
-  pageContent.classList.remove("hide");
-  latestButton.remove();
-  sportsButton.remove();
-  covidButton.remove();
-  latestSection.remove();
-  sportsSection.remove();
-}
+// function openCovidPage() {
+//   console.log("Covid Page Opened");
+//   latestButton.classList.add.hidden;
+//   pageContent.classList.remove("hide");
+//   latestButton.remove();
+//   sportsButton.remove();
+//   covidButton.remove();
+//   latestSection.remove();
+//   sportsSection.remove();
+// }
 
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
   let firstApiUrl =
-    "http://api.mediastack.com/v1/news?access_key=28c721d782d6d69f95ee0cc65221b176&date=2022-08-08&countries=gb";
+    "http://api.mediastack.com/v1/news?access_key=96ae6e755874d6ceea975eadd2ec1d12&date=2022-08-08&countries=gb";
 
   fetch(firstApiUrl)
     .then((response) => response.json())
