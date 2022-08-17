@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Latest</title>
+  </head>
+  <body>
+    <nav class="navbar is-transparent" >
+        <div class="navbar-brand">
+          <a class="navbar-item" href="#">
+            <img src="./assets/images/logo.png" alt="news page logo"
+            width="100"/>
+          </a>
+          <div
+            class="navbar-burger"
+            data-target="navbarExampleTransparentExample"
+          >
+          </div>
+        </div>
+        <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="index.html"> Home </a>
+            <div class="navbar-item has-dropdown is-hoverable">
+              <a class="navbar-link"> Categories </a>
+              <div class="navbar-dropdown is-boxed">
+                <a class="navbar-item " href="#latest"> Latest </a>
+                <a class="navbar-item" href="#sports"> Sports </a>
+                <a class="navbar-item" href="#covid-cases"> Covid Cases </a>
+              </div>
+            </div>
+          </div>
+          <div class="navbar-end">
+            <div class="navbar-item">
+                <a class="navbar-item " href="#contactUs"> Contact Us </a>
+                <a class="navbar-item " href="#"> About Us </a>
+                <a class="navbar-item " id="recently-viewed" href="#"> Recently Viewed </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+  <!-- <div class="categories">
+        <div class="buttons">
+          <button id="latest-btn" class="button is-large">Latest</button>
+          <button id="sports-btn" class="button is-large">Sports</button>
+          <button id="covid-cases-btn" class="covid-cases-btn button is-large">
+            Covid Cases
+ </button>
+        </div> -->
+      
+            </section>
+
+            <section id="sports-section" class="hide-sports">
+                <div class="tile is-parent">
+                  <div class="tile is-child box">
+                    <p class="title latest">Sports</p>
+                    <ul id="sportsHeadlineList">
+      
+                    </ul>
+                    <div  class="is-four-fifths" id="sportsHeadlines" ></div>
+                    <div class="is-one-quarter"  id="sportsLinks" ></div> 
+                  </div>
+                </div>
+              </section>
+            
+          <div id="latest-section">
+            <div class="tile is-parent">
+              <div >
+                <p class="title latest">Latest</p>
+                <div  class="news-container" >
+                  <ul id="headlineList">
+  
+                  </ul>
+                <div  class="is-four-fifths" id="latestHeadlines" ></div>
+                <div class="is-one-quarter"  id="links" ></div> 
+              </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    <script src="./assets/js/script.js"></script>
+  </body>
+  <footer class="footer" id="contactUs">
+    <div class="content has-text-centered">
+      <p><strong> Contact us:</strong></p>
+      <div class="columns">
+        <div class="column mt-4">
+            <img src="./assets/images/icons8-github-30.png"
+            >
+          <a href="https://github.com/aisha1710" target="_blank" >Aisha</a>
+          <p> <strong>@</strong>faisha879@gmail.com</p>
+        </div>
+        <div class="column mt-4">
+          <img src="./assets/images/icons8-github-30.png"
+          >
+          <a href="https://github.com/RahmaBilal" target="_blank">Rahma</a>
+          <p><strong>@</strong>rahma.bilal15@gmail.com</p>
+        </div>
+        <div class="column mt-4">
+          <img src="./assets/images/icons8-github-30.png"
+          >
+          <a href="https://github.com/Axmedd" target="_blank">Ahmed</a>
+          <p><strong>@</strong>aabdikadir714@gmail.com</p>
+        </div>
+        <div class="column mt-4" >
+          <img src="./assets/images/icons8-github-30.png"
+          >
+          <a href="https://github.com/khalidmanufan" target="_blank">Khalid</a>
+          <p><strong>@</strong>username@gmail.com</p>
+        </div>
+        <div class="column mt-4">
+          <img src="./assets/images/icons8-github-30.png"
+          >
+          <a href="https://github.com/SuleRas" target="_blank">Suleiman</a>
+          <p><strong>@</strong>sm.ras@hotmail.co.uk</p>
+        </div>
+        <div class="column mt-4">
+          <img src="./assets/images/icons8-github-30.png"
+          >
+          <a href="https://github.com/ZohaibSyed97" target="_blank">Zohaib</a>
+          <p><strong>@</strong>zohaibs1997@gmail.com</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>
