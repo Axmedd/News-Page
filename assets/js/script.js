@@ -125,10 +125,42 @@ function handleSportsData(sportsData) {
 
 //console.log(data[i].description);
 
-secondApiUrl =
-  "https://api.covid19api.com/total/country/united-kingdom/status/confirmed?from=2022-03-01T00:00:00Z&to=2022-08-01T00:00:00Z";
+handleNewsApi();
+
+secondApiUrl = "https://api.covid19api.com/summary";
+
 fetch(secondApiUrl)
   .then((response) => response.json())
-  .then((secondApiData) => console.log(secondApiData));
+  .then((secondApiData) => handleCovidCases(secondApiData));
+function printApi(apiData) {
+  console.log(apiData);
+}
+var ukCases = $("#uk-cases");
+function handleCovidCases(secondApiData) {
+  console.log(secondApiData);
+  console.log(secondApiData.Countries);
+  let countries = secondApiData.Countries;
+  for (let i of countries) {
+    console.log(i.Country);
+    if (i.Country === "United Kingdom") {
+      console.log(i);
 
-handleNewsApi();
+      let divCovid = $("<td>");
+      divCovid.text(i.NewDeaths);
+      ukCases.append(divCovid);
+
+      let divTotalConfirm = $("<td>");
+      divTotalConfirm.text(i.TotalConfirmed);
+      ukCases.append(divTotalConfirm);
+
+      let divDate = $("<td>");
+      divDate.text(i.Date);
+      var date = moment(i.Date, "YYYY-MM-DDTHH:mm:ssZ").format("DD-MM-YYYY");
+      ukCases.append(date);
+    }
+  }
+}
+console.log(secondApiData.data[i].cases);
+function printApi(apiData) {
+  console.log(apiData);
+}
