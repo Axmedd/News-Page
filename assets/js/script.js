@@ -62,7 +62,7 @@ function openCovidPage() {
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
   let firstApiUrl =
-    "http://api.mediastack.com/v1/news?access_key=28c721d782d6d69f95ee0cc65221b176&date=2022-08-08&countries=gb";
+    "http://api.mediastack.com/v1/news?access_key=6c0541c286d420f924ebb54cd2cbc1ce&date=2022-08-08&countries=gb";
 
   fetch(firstApiUrl)
     .then((response) => response.json())
