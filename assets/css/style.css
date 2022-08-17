@@ -16,7 +16,7 @@
   height: 725px;
   background-position: center;
   background-size: cover;
-
+}
 
 .visibilty {
   visibility: hidden;
@@ -24,5 +24,4 @@
 
 .hide {
   display: none;
-
 }
