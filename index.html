@@ -9,153 +9,159 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
     />
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <title>NewsPage</title>
+    <title>Document</title>
+
+    <script type="text/javascript"> 
+      function save() {
+          var myURL = document.getElementById('url');
+          localStorage.setItem('url', myURL.value);
+      }
+      
+      function load() {
+          var storedValue = localStorage.getItem('url');
+          var linkTag = document.getElementById('link');
+          var urlInput = document.getElementById('url');
+          if(storedValue) {
+              urlInput.value = storedValue;
+              linkTag.href = storedValue;
+              linkTag.innerHTML = storedValue;
+          }
+      }
+      
+      </script>
   </head>
-  <body>
-    <nav class="navbar is-transparent" >
-      <div class="navbar-brand">
-        <a class="navbar-item" href="#">
-          <img src="./assets/images/logo.png" alt="news page logo"
-          width="100"/>
-        </a>
-        <div
-          class="navbar-burger"
-          data-target="navbarExampleTransparentExample"
-        >
-        </div>
-      </div>
-      <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-          <a class="navbar-item" href="/index.html"> Home </a>
-          <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link"> Categories </a>
-            <div class="navbar-dropdown is-boxed">
-              <a class="navbar-item " href="#latest"> Latest </a>
-              <a class="navbar-item" href="#sports"> Sports </a>
-              <a class="navbar-item" href="#covid-cases"> Covid Cases </a>
-            </div>
-          </div>
-        </div>
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="field is-grouped">
-              <a class="navbar-item " href="#"> About Us </a>
-              <a class="navbar-item " href="#"> Favorites </a>
-            </div>
+
+  <nav class="navbar is-transparent">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="#">
+        <img
+          src="/assets/images/logo.png"
+          alt="news page logo"
+          width="100"
+        />
+      </a>
+      <div
+        class="navbar-burger"
+        data-target="navbarExampleTransparentExample"
+      ></div>
+    </div>
+    <div id="navbarExampleTransparentExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/index.html"> Home </a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link"> Categories </a>
+          <div class="navbar-dropdown is-boxed">
+            <a class="navbar-item" href="#latest"> Latest </a>
+            <a class="navbar-item" href="#sports"> Sports </a>
+            <a class="navbar-item" href="#covid-cases"> Covid Cases </a>
           </div>
         </div>
       </div>
-    </nav>
-      <section class="section" id="latest">
-        <div class="columns pt-4 is-mobile">
-          <div class="column is-two-thirds mt-6">
-            <span class="icon has-text-warning">
-              <i class="far fa-chart-bar fa-lg"></i>
-            </span>
-            <h1 class="is-size-1">
-              Latest news <br />
-              in the UK
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              rem consequatur iste doloribus, dolorum nihil reiciendis quis.
-              Atque eaque incidunt quia, iste nisi quisquam voluptates dicta vel
-              consequuntur dolorum dolorem.
-            </p>
-            <button class="button is-link mt-4" id="latest-btn">Click here</button>
-          </div>
-          <div class="column mt-6">
-            <img src="./assets/images/globe.png" alt="globe image" 
-            width="350"
-            height="450"/>
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <div class="field is-grouped">
+            <a class="navbar-item" href="#"> About Us </a>
+            <a class="navbar-item" href="#"> Favorites </a>
           </div>
         </div>
-      </section>
-      <section class="section" id="sports">
-        <div class="columns pt-6 is-mobile">
-          <div class="column mt-6">
-            <img src="./assets/images/Sport_balls.svg.png" alt="sports image"
-            width="300"
-            height="300"/>
-          </div>
-          <div class="column is-two-thirds mt-6">
-            <span class="icon has-text-warning">
-              <i class="far fa-chart-bar fa-lg"></i>
-            </span>
-            <h1 class="is-size-1">
-              Sports <br />
-              in the UK
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              rem consequatur iste doloribus, dolorum nihil reiciendis quis.
-              Atque eaque incidunt quia, iste nisi quisquam voluptates dicta vel
-              consequuntur dolorum dolorem.
-            </p>
-            <button class="button is-link mt-4" id="sports-btn">Click here</button>
-          </div>
-        </div>
-      </section>
-      <section class="section" id="covid-cases">
-        <div class="columns pt-6 is-mobile">
-          <div class="column is-two-thirds mt-6">
-            <span class="icon has-text-warning">
-              <i class="far fa-chart-bar fa-lg"></i>
-            </span>
-            <h1 class="is-size-1">
-              Covid Cases <br />
-              in the UK
-            </h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-              rem consequatur iste doloribus, dolorum nihil reiciendis quis.
-              Atque eaque incidunt quia, iste nisi quisquam voluptates dicta vel
-              consequuntur dolorum dolorem.
-            </p>
-            <button class="button is-link mt-4" id="covid-cases-btn">Click here</button>
-          </div>
-          <div class="column mt-6">
-            <img src="./assets/images/covid.webp" alt="covid image"
-            />
-          </div>
-        </div>
-      </section>
-    </main>
-<footer class="footer">
-  <div class="content has-text-centered">
-    <p><strong> Contact us:</strong></p>
-    <div class="columns">
-      <div class="column mt-4">
-        <span>
-          <i class="fa-brands fa-github"></i>
-        </span>
-        <a href="https://github.com/aisha1710" target="_blank">Aisha</a>
-        <p>faisha879@gmail.com</p>
-      </div>
-      <div class="column mt-4">
-        <a href="https://github.com/RahmaBilal" target="_blank">Rahma</a>
-        <p>rahma.bilal15@gmail.com</p>
-      </div>
-      <div class="column mt-4">
-        <a href="https://github.com/Axmedd" target="_blank">Ahmed</a>
-        <p>aabdikadir714@gmail.com</p>
-      </div>
-      <div class="column mt-4" >
-        <a href="https://github.com/khalidmanufan" target="_blank">Khalid</a>
-        <p></p>
-      </div>
-      <div class="column mt-4">
-        <a href="https://github.com/SuleRas" target="_blank">Suleiman</a>
-        <p>sm.ras@hotmail.co.uk</p>
-      </div>
-      <div class="column mt-4">
-        <a href="https://github.com/ZohaibSyed97" target="_blank">Zohaib</a>
-        <p>zohaibs1997@gmail.com</p>
       </div>
     </div>
-  </div>
-</footer>
+  </nav>
+
+  <body >
+    
+    <button onClick="window.location.reload();">Back
+    </button>
+    <div class="categories">
+      <div class="buttons">
+        <button id="latest-btn" class="button is-large">Latest</button>
+        <button id="sports-btn" class="button is-large">Sports</button>
+        <button id="covid-cases-btn" class="covid-cases-btn button is-large">
+          Covid Cases
+        </button>
+      </div>
+    </div>
+    <div id="page-content" class="hide">
+      <div class="tile is-ancestor">
+        <!-- All the tiles/Content of page is in this Div -->
+        <div class="tile is-4 is-vertical is-parent">
+          <!-- This is a Bulma preset CSS Class -->
+          <section id="covid-section" >
+          <div class="tile is-child box">
+            <p class="title covid-cases">Covid Cases</p>
+            <p>Cases Counter</p>
+          </div>
+           </div>
+          </section>
+          
+        <div id="latest-section">
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <p class="title latest">Latest</p>
+              <div  class="news-container columns" >
+                <!-- <img
+          src="/assets/images/globe.png"
+          alt="news page logo"
+          width="100"
+        /> -->
+                <ul id="headlineList">
+
+                </ul>
+              <div  class="is-four-fifths" id="latestHeadlines" ></div>
+              <div class="is-one-quarter"  id="links" ></div> 
+            </div>
+            </div>
+          </div>
+        </div>
+        <section id="sports-section" class="hide-sports">
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <p class="title latest">Sports</p>
+              <ul id="sportsHeadlineList">
+
+              </ul>
+              <div  class="is-four-fifths" id="sportsHeadlines" ></div>
+              <div class="is-one-quarter"  id="sportsLinks" ></div> 
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
     <script src="./assets/js/script.js"></script>
+    <footer class="footer">
+      <div class="content has-text-centered">
+        <p><strong> Contact us:</strong></p>
+        <div class="columns">
+          <div class="column mt-4">
+            <span>
+              <i class="fa-brands fa-github"></i>
+            </span>
+            <a href="https://github.com/aisha1710" target="_blank">Aisha</a>
+            <p>faisha879@gmail.com</p>
+          </div>
+          <div class="column mt-4">
+            <a href="https://github.com/RahmaBilal" target="_blank">Rahma</a>
+            <p>rahma.bilal15@gmail.com</p>
+          </div>
+          <div class="column mt-4">
+            <a href="https://github.com/Axmedd" target="_blank">Ahmed</a>
+            <p>aabdikadir714@gmail.com</p>
+          </div>
+          <div class="column mt-4" >
+            <a href="https://github.com/khalidmanufan" target="_blank">Khalid</a>
+            <p></p>
+          </div>
+          <div class="column mt-4">
+            <a href="https://github.com/SuleRas" target="_blank">Suleiman</a>
+            <p>sm.ras@hotmail.co.uk</p>
+          </div>
+          <div class="column mt-4">
+            <a href="https://github.com/ZohaibSyed97" target="_blank">Zohaib</a>
+            <p>zohaibs1997@gmail.com</p>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
+  
 </html>
