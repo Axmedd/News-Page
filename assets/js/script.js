@@ -61,8 +61,8 @@ const SportsHeadlineList = document.getElementById("sportsHeadlineList");
 
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
-  let firstApiUrl =
-    "http://api.mediastack.com/v1/news?access_key=96ae6e755874d6ceea975eadd2ec1d12&date=2022-08-08&countries=gb";
+ let firstApiUrl =
+    "http://api.mediastack.com/v1/news?access_key=6c0541c286d420f924ebb54cd2cbc1ce&date=2022-08-08&countries=gb";
 
   fetch(firstApiUrl)
     .then((response) => response.json())
