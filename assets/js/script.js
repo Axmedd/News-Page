@@ -1,14 +1,11 @@
 const latestSection = document.getElementById("latest-section");
-
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
   let firstApiUrl =
     "http://api.mediastack.com/v1/news?access_key=bf0120fe9baf8401ce09a741c430a9fd&languages=en&countries=gb";
-
   fetch(firstApiUrl)
     .then((response) => response.json())
     .then((firstApiData) => handleNewsApiData(firstApiData));
-
   function handleNewsApiData(firstApiData) {
     //console.log(firstApiData);
     for (var i = 0; i < 25; i++) {
@@ -16,17 +13,14 @@ function handleNewsApi() {
         //handleNewsData(firstApiData.data[i]);
         let newslist = "";
         const keys = Object.keys(firstApiData.data[i]);
-
         console.log(keys);
         //for(let)
         const newsHeader = `<h1 class="title latest">Latest News in United Kingdom</h1></br></br>`;
         let newsList = "<div>";
-
         firstApiData.data.forEach((news) => {
           //const news = newsData;
           newslist = `
         <div class="box">
-      
             <article class="media">
               <div class="media-left">
                 <img
@@ -55,7 +49,6 @@ function handleNewsApi() {
             </article>
             </div>
             </br>
-      
         `;
           //console.log(newslist);
           newsList += newslist;
@@ -66,7 +59,6 @@ function handleNewsApi() {
     }
   }
 }
-
 function handleNewsData(newsData) {
   //console.log(newsData);
   // console.log(newsData);
@@ -80,17 +72,14 @@ function handleNewsData(newsData) {
   // headlineList.appendChild(listHead);
   let newslist = "";
   const keys = Object.keys(newsData);
-
   console.log(keys);
   //for(let)
   const newsHeader = `<h1 class="title latest">Latest News in United Kingdom</h1></br></br>`;
   let newsList = "<div>";
-
   newsData.forEach((news) => {
     //const news = newsData;
     newslist = `
   <div class="box">
-
       <article class="media">
         <div class="media-left">
           <img
@@ -117,7 +106,6 @@ function handleNewsData(newsData) {
       </article>
       </div>
       </br>
-
   `;
     //console.log(newslist);
     newsList += newslist;
@@ -125,11 +113,29 @@ function handleNewsData(newsData) {
   newsList += "</div>";
   latestSection.innerHTML = newsHeader + newsList;
 }
-
 const saveNews = (title) => {
   const newsObject = newsList.find((news) => news.title === title);
   const stringified = JSON.stringify(newsObject);
   localStorage.setItem(title, stringified);
 };
-
 window.addEventListener("load", handleNewsApi());
+
+
+
+
+
+
+
+
+
+
+
+Message Aisha Hassan
+
+
+
+
+
+
+
+
