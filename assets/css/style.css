@@ -5,23 +5,43 @@
   background-size: cover;
 }
 #covid-cases {
-  background: url("/assets/images/background.jpg");
-  height: 725px;
-  background-position: center;
-  background-size: cover;
-}
-
-#sports {
   background: url("/assets/images/blue-paint.png");
   height: 725px;
   background-position: center;
   background-size: cover;
 }
 
-.visibilty {
-  visibility: hidden;
+td {
+  text-align: center;
 }
 
-.hide {
-  display: none;
+.covid-title {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 50px;
+  text-shadow: 10px 10px 10px grey;
+  font-size: 45px !important;
+}
+.latest {
+  text-align: center;
+  text-decoration: underline;
+  margin-top: 50px;
+  text-shadow: 10px 10px 10px grey;
+  font-size: 45px !important;
+}
+
+.page-content {
+  margin-top: 50px;
+}
+
+.content-section {
+  margin-left: 75px;
+}
+
+.province {
+  text-decoration: underline;
+}
+
+.tile {
+  justify-content: center;
 }
