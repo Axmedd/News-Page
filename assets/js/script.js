@@ -74,6 +74,10 @@ function handleNewsApi() {
     for (var i = 0; i < 25; i++) {
       //create a html tag
       //append text content
+      // if (!firstApiData){
+      // alert("no results available");
+      // return;
+      //}
       console.log(firstApiData.title);
 
       if (firstApiData.data[i].category === "sports") {
@@ -155,12 +159,13 @@ function handleCovidCases(secondApiData) {
 
       let divDate = $("<td>");
       divDate.text(i.Date);
+      console.log(i.Date);
       var date = moment(i.Date, "YYYY-MM-DDTHH:mm:ssZ").format("DD-MM-YYYY");
       ukCases.append(date);
     }
   }
 }
-console.log(secondApiData.data[i].cases);
+//console.log(secondApiData.data[i].cases);
 function printApi(apiData) {
   console.log(apiData);
 }
