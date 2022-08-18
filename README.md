@@ -10,5 +10,7 @@ The last section would be the Covid-Section which would show the deaths of the t
 
 We used a variety of application these applications include
 -Bulma
--Moment
+-Moment.js
 -Jquery
+
+link for demo -
