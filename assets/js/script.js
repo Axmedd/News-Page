@@ -11,7 +11,8 @@ const headlineList = document.getElementById("headlineList");
 const sportsHeadlines = document.getElementById("sportsHeadlines");
 const sportsLinks = document.getElementById("sportsLinks");
 const SportsHeadlineList = document.getElementById("sportsHeadlineList");
-
+const recentlyViewedBtn = document.getElementById("recently-viewed");
+const aboutBtn = document.getElementById("about-us")
 // const localStorageURL = document.getElementById("recently-viewed");
 
 // // var url=location.href;
@@ -169,3 +170,4 @@ function handleCovidCases(secondApiData) {
 function printApi(apiData) {
   console.log(apiData);
 }
+

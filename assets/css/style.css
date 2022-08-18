@@ -25,3 +25,8 @@
 .hide {
   display: none;
 }
+.news-container{
+  display: contents;
+  flex-direction: column;
+  
+}
