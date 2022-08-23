@@ -27,8 +27,8 @@ function handleNewsApi() {
                   class="image is-150x115"
                   src="${news.image}"
                   alt="${news.title}"
-                  width="220px"
-                  height="220px"
+                  width="250px"
+                  height="250px"
                 />
                 <br />
               </div>
@@ -43,7 +43,7 @@ function handleNewsApi() {
                   </p>
                 </div>
                 <a href="${news.url}"<button class="button is-link">Click Here</button></a>
-                <button class="button is-danger"  onclick="saveNews('${news.title}')">
+                <button class="button is-danger" onclick="saveNews('${news.title}')">
                 Save for Later</button>
               </div>
             </article>
