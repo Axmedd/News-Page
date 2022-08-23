@@ -2,7 +2,7 @@ const latestSection = document.getElementById("latest-section");
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
   let firstApiUrl =
-    "http://api.mediastack.com/v1/news?access_key=bf0120fe9baf8401ce09a741c430a9fd&languages=en&countries=gb";
+    "http://api.mediastack.com/v1/news?access_key=f854f9edfe049ac0ff5980288e0ebe1b&languages=en&countries=gb";
   fetch(firstApiUrl)
     .then((response) => response.json())
     .then((firstApiData) => handleNewsApiData(firstApiData));
