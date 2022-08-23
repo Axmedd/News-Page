@@ -38,6 +38,14 @@ td {
   margin-left: 75px;
 }
 
+#latest-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+.media {
+  display: flex;
+  flex-wrap: wrap;
+}
 .province {
   text-decoration: underline;
 }

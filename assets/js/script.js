@@ -1,171 +1,121 @@
-const latestButton = document.getElementById("latest-btn");
-const sportsButton = document.getElementById("sports-btn");
-const covidButton = document.getElementById("covid-cases-btn");
-const pageContent = document.getElementById("page-content");
-const sportsSection = document.getElementById("sports-section");
 const latestSection = document.getElementById("latest-section");
-const covidSection = document.getElementById("covid-section");
-const latestHeadlines = document.getElementById("latestHeadlines");
-const latestLinks = document.getElementById("links");
-const headlineList = document.getElementById("headlineList");
-const sportsHeadlines = document.getElementById("sportsHeadlines");
-const sportsLinks = document.getElementById("sportsLinks");
-const SportsHeadlineList = document.getElementById("sportsHeadlineList");
-
-// const localStorageURL = document.getElementById("recently-viewed");
-
-// // var url=location.href;
-// // localStorage.setItem("url",url);
-// // function loadOldUrl(){
-// // location.href=localStorage.getItem("url");
-// // }
-// // //when button clicked
-// // document.querySelector("recently-viewed").addEventListener("click",loadUrl);
-
-// latestButton.addEventListener("click", openLatestPage);
-
-// function openLatestPage() {
-//   console.log("Latest Page Opened");
-//   latestButton.classList.add.hidden;
-//   pageContent.classList.remove("hide");
-//   latestButton.remove();
-//   sportsButton.remove();
-//   covidButton.remove();
-//   sportsSection.remove();
-// }
-
-// sportsButton.addEventListener("click", openSportPage);
-
-// function openSportPage() {
-//   console.log("Sport Page Opened");
-//   latestButton.classList.add.hidden;
-//   pageContent.classList.remove("hide");
-//   latestButton.remove();
-//   sportsButton.remove();
-//   covidButton.remove();
-//   latestSection.remove();
-// }
-
-// covidButton.addEventListener("click", openCovidPage);
-
-// function openCovidPage() {
-//   console.log("Covid Page Opened");
-//   latestButton.classList.add.hidden;
-//   pageContent.classList.remove("hide");
-//   latestButton.remove();
-//   sportsButton.remove();
-//   covidButton.remove();
-//   latestSection.remove();
-//   sportsSection.remove();
-// }
-
 // fetchButton.addEventListener("click", getApi);
 function handleNewsApi() {
   let firstApiUrl =
-    "http://api.mediastack.com/v1/news?access_key=328d415888750fac710b15a94c5fb6d3&date=2022-08-08&countries=gb";
-
+    "http://api.mediastack.com/v1/news?access_key=bf0120fe9baf8401ce09a741c430a9fd&languages=en&countries=gb";
   fetch(firstApiUrl)
     .then((response) => response.json())
     .then((firstApiData) => handleNewsApiData(firstApiData));
-
   function handleNewsApiData(firstApiData) {
-    //console.log(firstApiData.data);
-    // headlineList = document.createElement("ul");
+    //console.log(firstApiData);
     for (var i = 0; i < 25; i++) {
-      //create a html tag
-      //append text content
-      // if (!firstApiData){
-      // alert("no results available");
-      // return;
-      //}
-      console.log(firstApiData.title);
-
-      if (firstApiData.data[i].category === "sports") {
-        handleSportsData(firstApiData.data[i]);
-      } else {
-        handleNewsData(firstApiData.data[i]);
+      if (firstApiData.data[i].country == "gb") {
+        //handleNewsData(firstApiData.data[i]);
+        let newslist = "";
+        const keys = Object.keys(firstApiData.data[i]);
+        console.log(keys);
+        //for(let)
+        const newsHeader = `<h1 class="title latest">Latest News in United Kingdom</h1></br></br>`;
+        let newsList = "<div>";
+        firstApiData.data.forEach((news) => {
+          //const news = newsData;
+          newslist = `
+        <div class="box">
+            <article class="media">
+              <div class="media-left">
+                <img
+                  class="image is-150x115"
+                  src="${news.image}"
+                  alt="${news.title}"
+                  width="250px"
+                  height="250px"
+                />
+                <br />
+              </div>
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>${news.title}</strong>
+                    <br /><br />
+                    <strong>Description:</strong> ${news.description}
+                    <br />
+                    <strong>Source:</strong> ${news.source}
+                  </p>
+                </div>
+                <a href="${news.url}"<button class="button is-link">Click Here</button></a>
+                <button class="button is-danger" onclick="saveNews('${news.title}')">
+                Save for Later</button>
+              </div>
+            </article>
+            </div>
+            </br>
+        `;
+          //console.log(newslist);
+          newsList += newslist;
+        });
+        newsList += "</div>";
+        latestSection.innerHTML = newsHeader + newsList;
       }
     }
   }
 }
-
 function handleNewsData(newsData) {
-  //function for latest
-  console.log(newsData);
-  // h2ForLatest = document.createElement("h2");
-  // latestHeadlines.classList.add("is-four-fifths");
-  // h2ForLatest.textContent = newsData.title;
-  // latestHeadlines.appendChild(h2ForLatest);
-  listHead = document.createElement("li");
-  linkForLatest = document.createElement("a");
-  linkForLatest.classList.add("link-button");
-  // linkForLatest = document.createElement("");
-  linkForLatest.setAttribute("href", newsData.url);
-  console.log(newsData);
-  linkForLatest.textContent = newsData.title;
-  //latestHeadlines.appendChild(linkForLatest);
-  listHead.appendChild(linkForLatest);
-  headlineList.appendChild(listHead);
+  //console.log(newsData);
+  // console.log(newsData);
+  // listHead = document.createElement("li");
+  // linkForLatest = document.createElement("a");
+  // linkForLatest.classList.add("link-button");
+  // linkForLatest.setAttribute("href", newsData.url);
+  // console.log(newsData);
+  // linkForLatest.textContent = newsData.title;
+  // listHead.appendChild(linkForLatest);
+  // headlineList.appendChild(listHead);
+  let newslist = "";
+  const keys = Object.keys(newsData);
+  console.log(keys);
+  //for(let)
+  const newsHeader = `<h1 class="title latest">Latest News in United Kingdom</h1></br></br>`;
+  let newsList = "<div>";
+  newsData.forEach((news) => {
+    //const news = newsData;
+    newslist = `
+  <div class="box">
+      <article class="media">
+        <div class="media-left">
+          <img
+            class="image is-150x115"
+            src="${news.image}"
+            alt="${news.title}"
+          />
+          <br />
+        </div>
+        <div class="media-content">
+          <div class="content">
+            <p>
+              <strong>${news.title}</strong>
+              <br /><br />
+              <strong>Description:</strong> ${news.description}
+              <br />
+              <strong>Source:</strong> ${news.source}
+            </p>
+          </div>
+          <a href="${news.url}"<button class="button is-link">Click Here</button></a>
+          <button class="button is-danger" onclick="saveNews('${news.title}')">
+          Save for Later</button>
+        </div>
+      </article>
+      </div>
+      </br>
+  `;
+    //console.log(newslist);
+    newsList += newslist;
+  });
+  newsList += "</div>";
+  latestSection.innerHTML = newsHeader + newsList;
 }
-
-function handleSportsData(sportsData) {
-  // function for sports
-  console.log(sportsData);
-  // h2ForLatest = document.createElement("h2");
-  // latestHeadlines.classList.add("is-four-fifths");
-  // h2ForLatest.textContent = sportsData.title;
-  // latestHeadlines.appendChild(h2ForLatest);
-  sportsListHead = document.createElement("li");
-  linkForSport = document.createElement("a");
-  linkForSport.classList.add("link-button");
-  // linkForLatest = document.createElement("");
-  linkForSport.setAttribute("href", sportsData.url);
-  console.log(sportsData);
-  linkForSport.textContent = sportsData.title;
-  //latestHeadlines.appendChild(linkForLatest);
-  sportsListHead.appendChild(linkForSport);
-  SportsHeadlineList.appendChild(sportsListHead);
-}
-
-//console.log(data[i].description);
-
-handleNewsApi();
-
-secondApiUrl = "https://api.covid19api.com/summary";
-
-fetch(secondApiUrl)
-  .then((response) => response.json())
-  .then((secondApiData) => handleCovidCases(secondApiData));
-function printApi(apiData) {
-  console.log(apiData);
-}
-var ukCases = $("#uk-cases");
-function handleCovidCases(secondApiData) {
-  console.log(secondApiData);
-  console.log(secondApiData.Countries);
-  let countries = secondApiData.Countries;
-  for (let i of countries) {
-    console.log(i.Country);
-    if (i.Country === "United Kingdom") {
-      console.log(i);
-
-      let divCovid = $("<td>");
-      divCovid.text(i.NewDeaths);
-      ukCases.append(divCovid);
-
-      let divTotalConfirm = $("<td>");
-      divTotalConfirm.text(i.TotalConfirmed);
-      ukCases.append(divTotalConfirm);
-
-      let divDate = $("<td>");
-      divDate.text(i.Date);
-      console.log(i.Date);
-      var date = moment(i.Date, "YYYY-MM-DDTHH:mm:ssZ").format("DD-MM-YYYY");
-      ukCases.append(date);
-    }
-  }
-}
-//console.log(secondApiData.data[i].cases);
-function printApi(apiData) {
-  console.log(apiData);
-}
+const saveNews = (title) => {
+  const newsObject = newsList.find((news) => news.title === title);
+  const stringified = JSON.stringify(newsObject);
+  localStorage.setItem(title, stringified);
+};
+window.addEventListener("load", handleNewsApi());
